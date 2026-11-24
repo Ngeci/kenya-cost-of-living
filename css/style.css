@@ -1,0 +1,652 @@
+
+/* =========================================
+   KENYA COST OF LIVING - DATA STORIES
+   ========================================= */
+
+:root {
+    --forest: #173D32;
+    --emerald: #39745C;
+    --sage: #E6EEE8;
+    --cream: #F6F4ED;
+    --white: #FFFFFF;
+    --gold: #D8A45D;
+    --charcoal: #242A27;
+    --muted: #737C76;
+    --border: #E5E8E3;
+    --shadow: 0 12px 35px rgba(23, 61, 50, 0.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background: rgba(246, 244, 237, 0.96);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--forest);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.logo-mark {
+    background: var(--forest);
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--emerald);
+}
+
+.nav-button {
+    border: 1px solid var(--forest);
+    color: var(--forest);
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: var(--forest);
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 25px;
+    color: var(--forest);
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background:
+        linear-gradient(110deg,
+        rgba(18, 49, 39, 0.97),
+        rgba(23, 61, 50, 0.88)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85');
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 115px 0 105px;
+}
+
+.hero-content {
+    max-width: 1120px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--emerald);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero .eyebrow {
+    color: var(--gold);
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.13;
+    max-width: 780px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+    display: block;
+}
+
+.hero-description {
+    color: rgba(255,255,255,0.8);
+    max-width: 620px;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 14px 23px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: var(--gold);
+    color: var(--forest);
+}
+
+.primary-button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.secondary-button {
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+}
+
+.secondary-button:hover {
+    background: white;
+    color: var(--forest);
+}
+
+.hero-meta {
+    margin-top: 65px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero-meta span {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+}
+
+.hero-meta strong {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* GENERAL SECTIONS */
+
+.statistics-section,
+.analysis-section,
+.findings-section,
+.methodology-section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 38px;
+}
+
+.section-heading h2,
+.methodology-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 43px);
+    line-height: 1.25;
+    color: var(--forest);
+    margin-bottom: 13px;
+}
+
+.section-heading p,
+.methodology-content > div:first-child p {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 620px;
+}
+
+/* STATISTICS */
+
+.statistics-section {
+    background: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.stat-card {
+    border: 1px solid var(--border);
+    padding: 25px 22px;
+    border-radius: 8px;
+    transition: 0.3s;
+    background: white;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--emerald);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.stat-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--forest);
+    font-size: 38px;
+    margin: 10px 0 5px;
+}
+
+.stat-card p {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* CHARTS */
+
+.analysis-section {
+    background: var(--cream);
+}
+
+.category-section {
+    background: white;
+}
+
+.chart-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.chart-header h3 {
+    font-size: 17px;
+    color: var(--forest);
+    margin-bottom: 3px;
+}
+
+.chart-header p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.chart-tag {
+    background: var(--sage);
+    color: var(--forest);
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.chart-container {
+    position: relative;
+    height: 340px;
+    width: 100%;
+}
+
+.chart-note {
+    border-top: 1px solid var(--border);
+    margin-top: 22px;
+    padding-top: 15px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* FINDINGS */
+
+.findings-section {
+    background: var(--forest);
+}
+
+.findings-section .section-heading h2 {
+    color: white;
+}
+
+.findings-section .section-heading p {
+    color: rgba(255,255,255,0.65);
+}
+
+.findings-section .eyebrow {
+    color: var(--gold);
+}
+
+.findings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.finding-card {
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.17);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.finding-card:hover {
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-5px);
+}
+
+.finding-number {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.finding-card h3 {
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    line-height: 1.4;
+    margin: 18px 0 12px;
+}
+
+.finding-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+}
+
+/* METHODOLOGY */
+
+.methodology-section {
+    background: var(--cream);
+}
+
+.methodology-content {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.methodology-content > div:first-child p {
+    margin-bottom: 16px;
+    line-height: 1.9;
+}
+
+.source-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.source-card h3 {
+    color: var(--forest);
+    font-size: 14px;
+    margin: 15px 0 5px;
+}
+
+.source-card h3:first-child {
+    margin-top: 0;
+}
+
+.source-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.source-card a {
+    color: var(--emerald);
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.source-card a:hover {
+    text-decoration: underline;
+}
+
+.source-card hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #102B23;
+    padding: 35px 0;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    color: white;
+}
+
+.footer-logo .logo-mark {
+    background: var(--gold);
+    color: var(--forest);
+}
+
+.footer-content p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 10px;
+}
+
+.footer-content > p {
+    text-align: right;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 950px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .methodology-content {
+        gap: 35px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--border);
+        display: none;
+        flex-direction: column;
+        padding: 25px 5%;
+        gap: 20px;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 85px 0;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .findings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .methodology-content {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-card {
+        padding: 20px;
+    }
+
+    .chart-container {
+        height: 280px;
+    }
+
+    .footer-content > p {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        text-align: center;
+    }
+
+    .statistics-section,
+    .analysis-section,
+    .findings-section,
+    .methodology-section {
+        padding: 65px 0;
+    }
+
+    .chart-container {
+        height: 240px;
+    }
+
+    .chart-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

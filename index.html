@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kenya Cost of Living | A Data Story</title>
+
+    <meta name="description" content="An interactive data story exploring Kenya's cost of living, inflation and consumer price trends.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                <span class="logo-mark">K.</span>
+                <span>DATA STORIES</span>
+            </a>
+
+            <nav id="navLinks">
+                <a href="#overview">Overview</a>
+                <a href="#trends">Price Trends</a>
+                <a href="#categories">Categories</a>
+                <a href="#findings">Findings</a>
+            </nav>
+
+            <a href="#methodology" class="nav-button">
+                About the Data
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="overview">
+
+        <div class="container hero-content">
+
+            <span class="eyebrow">
+                KENYA ECONOMIC DATA SERIES / 2024
+            </span>
+
+            <h1>
+                Understanding the
+                <span>Cost of Living</span>
+                in Kenya.
+            </h1>
+
+            <p class="hero-description">
+                What do the numbers tell us about the changing
+                cost of everyday life? Explore inflation,
+                consumer prices and the economic trends
+                shaping Kenyan households.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#trends" class="primary-button">
+                    Explore the Data →
+                </a>
+
+                <a href="#methodology" class="secondary-button">
+                    View Methodology
+                </a>
+            </div>
+
+            <div class="hero-meta">
+                <span>RESEARCH PERIOD</span>
+                <strong>December 2023 – December 2024</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="statistics-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">01 / THE BIG PICTURE</span>
+                <h2>Kenya at a glance</h2>
+                <p>
+                    A snapshot of consumer price movements
+                    at the end of 2024.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+                    <span class="stat-label">Headline inflation</span>
+                    <h3>3.0%</h3>
+                    <p>Annual inflation, December 2024</p>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-label">Overall CPI</span>
+                    <h3>141.66</h3>
+                    <p>Consumer Price Index, December 2024</p>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-label">Food inflation</span>
+                    <h3>4.8%</h3>
+                    <p>Annual change in food prices</p>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-label">Transport inflation</span>
+                    <h3>0.2%</h3>
+                    <p>Annual change in transport prices</p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CPI TREND -->
+    <section class="analysis-section" id="trends">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">02 / PRICE MOVEMENTS</span>
+
+                <h2>How did consumer prices change?</h2>
+
+                <p>
+                    Tracking the overall Consumer Price Index
+                    from December 2023 to December 2024.
+                </p>
+            </div>
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+                    <div>
+                        <h3>Overall Consumer Price Index</h3>
+                        <p>Monthly CPI values</p>
+                    </div>
+
+                    <span class="chart-tag">KENYA · NATIONAL</span>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="cpiChart"></canvas>
+                </div>
+
+                <p class="chart-note">
+                    Source: Kenya National Bureau of Statistics.
+                    Base period: February 2019 = 100.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CATEGORY ANALYSIS -->
+    <section class="analysis-section category-section"
+             id="categories">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">03 / INFLATION DRIVERS</span>
+
+                <h2>Not everything increased equally.</h2>
+
+                <p>
+                    Comparing annual price changes across
+                    selected household expenditure categories.
+                </p>
+            </div>
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+                    <div>
+                        <h3>Annual inflation by category</h3>
+                        <p>Year-on-year change, December 2024</p>
+                    </div>
+
+                    <span class="chart-tag">PERCENTAGE</span>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+
+                <p class="chart-note">
+                    Negative values indicate a decline in the
+                    category's overall price index over the year.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FINDINGS -->
+    <section class="findings-section" id="findings">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">04 / WHAT THE DATA TELLS US</span>
+                <h2>Key findings</h2>
+
+                <p>
+                    Interpreting the numbers beyond the charts.
+                </p>
+            </div>
+
+            <div class="findings-grid">
+
+                <article class="finding-card">
+                    <span class="finding-number">01</span>
+
+                    <h3>Food remained a major pressure point.</h3>
+
+                    <p>
+                        Food and non-alcoholic beverages recorded
+                        annual inflation of 4.8%, higher than
+                        headline inflation of 3.0%.
+                    </p>
+                </article>
+
+                <article class="finding-card">
+                    <span class="finding-number">02</span>
+
+                    <h3>Transport price growth was modest.</h3>
+
+                    <p>
+                        Transport recorded annual inflation
+                        of 0.2% in December 2024, indicating
+                        relatively little year-on-year movement
+                        in its overall price index.
+                    </p>
+                </article>
+
+                <article class="finding-card">
+                    <span class="finding-number">03</span>
+
+                    <h3>Overall prices continued to rise.</h3>
+
+                    <p>
+                        The overall CPI increased from 137.55
+                        in December 2023 to 141.66 in
+                        December 2024.
+                    </p>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section class="methodology-section" id="methodology">
+
+        <div class="container methodology-content">
+
+            <div>
+                <span class="eyebrow">05 / RESEARCH NOTES</span>
+
+                <h2>About this analysis</h2>
+
+                <p>
+                    This project explores Kenya's Consumer Price
+                    Index and inflation trends using published
+                    national statistics.
+                </p>
+
+                <p>
+                    The Consumer Price Index measures changes
+                    in the price of a representative basket of
+                    goods and services consumed by households.
+                </p>
+            </div>
+
+            <div class="source-card">
+
+                <h3>Data source</h3>
+
+                <p>
+                    Kenya National Bureau of Statistics (KNBS)
+                </p>
+
+                <a href="https://www.knbs.or.ke/cpi-and-inflation-rates/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Explore official statistics →
+                </a>
+
+                <hr>
+
+                <h3>Analysis period</h3>
+                <p>December 2023 – December 2024</p>
+
+                <h3>Focus</h3>
+                <p>Consumer prices and annual inflation</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <a href="#" class="logo footer-logo">
+                    <span class="logo-mark">K.</span>
+                    <span>DATA STORIES</span>
+                </a>
+
+                <p>
+                    Turning economic data into meaningful insights.
+                </p>
+            </div>
+
+            <p>
+                An independent data analysis portfolio project.
+                <br>
+                © <span id="year"></span> Data Stories.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
